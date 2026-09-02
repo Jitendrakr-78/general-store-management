@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
 
     margin: 0;
@@ -388,3 +389,395 @@ th {
     }
 
 }
+=======
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f6f9;
+
+    color: #1f2937;
+
+}
+
+
+.dashboard-container {
+
+    width: 95%;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 25px 0;
+
+}
+
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.dashboard-header {
+
+    background: white;
+
+    padding: 22px 25px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.05);
+
+}
+
+
+.dashboard-header h1 {
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.dashboard-header p {
+
+    color: #6b7280;
+
+}
+
+
+.header-date {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+
+.main-nav {
+
+    background: #1f2937;
+
+    display: flex;
+
+    gap: 5px;
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    overflow-x: auto;
+
+}
+
+
+.main-nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    white-space: nowrap;
+
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    background: #2563eb;
+
+}
+
+
+/* ========================= */
+/* STATISTICS */
+/* ========================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.stat-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.05);
+
+}
+
+
+.stat-card span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.stat-card h2 {
+
+    margin-top: 8px;
+
+    font-size: 24px;
+
+}
+
+
+.stat-icon {
+
+    font-size: 30px;
+
+}
+
+
+.warning-card {
+
+    border-left:
+        4px solid #f59e0b;
+
+}
+
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.dashboard-card {
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.05);
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.card-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+.card-header p {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+
+}
+
+
+.card-header a {
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+.table-wrapper {
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+}
+
+
+th,
+td {
+
+    padding: 11px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    font-size: 13px;
+
+}
+
+
+th {
+
+    background: #f8fafc;
+
+    color: #4b5563;
+
+}
+
+
+.due-value {
+
+    color: #dc2626;
+
+    font-weight: bold;
+
+}
+
+
+.low-stock-value {
+
+    color: #dc2626;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+    }
+
+}
+>>>>>>> a473e3435407118240ea630d7a70313ef8388e7c

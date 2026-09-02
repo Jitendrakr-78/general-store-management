@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -464,3 +465,471 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        General Store Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="dashboard-header">
+
+        <div>
+
+            <h1>
+                General Store Management
+            </h1>
+
+            <p>
+                Business Dashboard
+            </p>
+
+        </div>
+
+
+        <div class="header-date"
+             id="currentDate">
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <nav class="main-nav">
+
+        <a href="dashboard.html"
+           class="active">
+
+            Dashboard
+
+        </a>
+
+
+        <a href="products.html">
+
+            Products
+
+        </a>
+
+        <a href="inventory.html">
+            Inventory
+        </a>
+
+        <a href="customers.html">
+
+            Customers
+
+        </a>
+
+
+        <a href="suppliers.html">
+
+            Suppliers
+
+        </a>
+
+
+        <a href="purchases.html">
+
+            Purchases
+
+        </a>
+
+
+        <a href="sales.html">
+
+            Sales
+
+        </a>
+    </nav>
+
+
+
+    <!-- ============================= -->
+    <!-- MAIN STATISTICS -->
+    <!-- ============================= -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Total Products
+                </span>
+
+                <h2 id="totalProducts">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                📦
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Customers
+                </span>
+
+                <h2 id="totalCustomers">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                👥
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Today's Sales
+                </span>
+
+                <h2 id="todaySales">
+                    Rs. 0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Today's Purchases
+                </span>
+
+                <h2 id="todayPurchases">
+                    Rs. 0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                🛒
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- SECOND STATISTICS -->
+    <!-- ============================= -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Stock Value
+                </span>
+
+                <h2 id="stockValue">
+                    Rs. 0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Customer Due
+                </span>
+
+                <h2 id="customerDue">
+                    Rs. 0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                💳
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div>
+
+                <span>
+                    Supplier Due
+                </span>
+
+                <h2 id="supplierDue">
+                    Rs. 0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                🧾
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card warning-card">
+
+            <div>
+
+                <span>
+                    Low Stock
+                </span>
+
+                <h2 id="lowStock">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-icon">
+                ⚠️
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- CONTENT GRID -->
+    <!-- ============================= -->
+
+    <section class="content-grid">
+
+
+        <!-- RECENT SALES -->
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Recent Sales
+                    </h2>
+
+                    <p>
+                        Latest invoices
+                    </p>
+
+                </div>
+
+
+                <a href="sales.html">
+
+                    View All
+
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Invoice
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Due
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="recentSalesBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOW STOCK -->
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Low Stock Products
+                    </h2>
+
+                    <p>
+                        Products requiring attention
+                    </p>
+
+                </div>
+
+
+                <a href="products.html">
+
+                    View Products
+
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Stock
+                            </th>
+
+                            <th>
+                                Reorder
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="lowStockBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<script
+    src="../js/dashboard.js">
+</script>
+
+
+</body>
+
+</html>
+>>>>>>> a473e3435407118240ea630d7a70313ef8388e7c
