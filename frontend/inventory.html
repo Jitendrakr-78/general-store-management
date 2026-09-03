@@ -1,0 +1,839 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Inventory Management
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/inventory.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div>
+
+            <h1>
+                Inventory Management
+            </h1>
+
+            <p>
+                Manage product stock
+            </p>
+
+        </div>
+
+
+        <a
+            href="dashboard.html"
+            class="dashboard-link">
+
+            ← Dashboard
+
+        </a>
+
+    </header>
+
+
+
+    <!-- SUMMARY -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <span>
+                Total Products
+            </span>
+
+            <strong id="totalProducts">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Total Stock
+            </span>
+
+            <strong id="totalStock">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Stock Value
+            </span>
+
+            <strong id="stockValue">
+                Rs. 0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Low Stock
+            </span>
+
+            <strong id="lowStock">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Out of Stock
+            </span>
+
+            <strong id="outOfStock">
+                0
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="toolbar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search product...">
+
+
+        <select id="stockFilter">
+
+            <option value="ALL">
+                All Stock
+            </option>
+
+            <option value="IN STOCK">
+                In Stock
+            </option>
+
+            <option value="LOW STOCK">
+                Low Stock
+            </option>
+
+            <option value="OUT OF STOCK">
+                Out of Stock
+            </option>
+
+        </select>
+
+
+        <button
+            onclick="openAdjustmentModal()">
+
+            + Stock Adjustment
+
+        </button>
+
+    </section>
+
+
+
+    <!-- INVENTORY TABLE -->
+
+    <section class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Product
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Purchase Price
+                    </th>
+
+                    <th>
+                        Selling Price
+                    </th>
+
+                    <th>
+                        Stock
+                    </th>
+
+                    <th>
+                        Reorder
+                    </th>
+
+                    <th>
+                        Stock Value
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="inventoryBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- MOVEMENT HISTORY -->
+
+    <section class="table-card">
+
+        <h2>
+            Stock Movement History
+        </h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Product
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+
+                    <th>
+                        Previous
+                    </th>
+
+                    <th>
+                        New Stock
+                    </th>
+
+                    <th>
+                        Remarks
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="movementBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- STOCK ADJUSTMENT MODAL -->
+<!-- ================================= -->
+
+<div
+    class="modal"
+    id="adjustmentModal">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <h2>
+                Stock Adjustment
+            </h2>
+
+            <button
+                onclick="closeAdjustmentModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="adjustmentForm">
+
+
+            <label>
+                Product
+            </label>
+
+
+            <select
+                id="productId"
+                required>
+
+                <option value="">
+                    Select Product
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Adjustment Type
+            </label>
+
+
+            <select
+                id="adjustmentType"
+                required>
+
+                <option value="">
+                    Select Type
+                </option>
+
+                <option value="IN">
+                    Stock IN
+                </option>
+
+                <option value="OUT">
+                    Stock OUT
+                </option>
+
+                <option value="ADJUSTMENT">
+                    Set Exact Stock
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Quantity
+            </label>
+
+
+            <input
+                type="number"
+                id="quantity"
+                min="0"
+                step="0.01"
+                required>
+
+
+
+            <label>
+                Remarks
+            </label>
+
+
+            <textarea
+                id="remarks"
+                rows="3"
+                placeholder="Optional remarks">
+            </textarea>
+
+
+
+            <button
+                type="submit">
+
+                Update Stock
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script
+    src="../js/inventory.js">
+</script>
+
+
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Inventory Management
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/inventory.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div>
+
+            <h1>
+                Inventory Management
+            </h1>
+
+            <p>
+                Manage product stock
+            </p>
+
+        </div>
+
+
+        <a
+            href="dashboard.html"
+            class="dashboard-link">
+
+            ← Dashboard
+
+        </a>
+
+    </header>
+
+
+
+    <!-- SUMMARY -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <span>
+                Total Products
+            </span>
+
+            <strong id="totalProducts">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Total Stock
+            </span>
+
+            <strong id="totalStock">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Stock Value
+            </span>
+
+            <strong id="stockValue">
+                Rs. 0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Low Stock
+            </span>
+
+            <strong id="lowStock">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Out of Stock
+            </span>
+
+            <strong id="outOfStock">
+                0
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="toolbar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search product...">
+
+
+        <select id="stockFilter">
+
+            <option value="ALL">
+                All Stock
+            </option>
+
+            <option value="IN STOCK">
+                In Stock
+            </option>
+
+            <option value="LOW STOCK">
+                Low Stock
+            </option>
+
+            <option value="OUT OF STOCK">
+                Out of Stock
+            </option>
+
+        </select>
+
+
+        <button
+            onclick="openAdjustmentModal()">
+
+            + Stock Adjustment
+
+        </button>
+
+    </section>
+
+
+
+    <!-- INVENTORY TABLE -->
+
+    <section class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Product
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Purchase Price
+                    </th>
+
+                    <th>
+                        Selling Price
+                    </th>
+
+                    <th>
+                        Stock
+                    </th>
+
+                    <th>
+                        Reorder
+                    </th>
+
+                    <th>
+                        Stock Value
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="inventoryBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- MOVEMENT HISTORY -->
+
+    <section class="table-card">
+
+        <h2>
+            Stock Movement History
+        </h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Product
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+
+                    <th>
+                        Previous
+                    </th>
+
+                    <th>
+                        New Stock
+                    </th>
+
+                    <th>
+                        Remarks
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="movementBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- STOCK ADJUSTMENT MODAL -->
+<!-- ================================= -->
+
+<div
+    class="modal"
+    id="adjustmentModal">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <h2>
+                Stock Adjustment
+            </h2>
+
+            <button
+                onclick="closeAdjustmentModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="adjustmentForm">
+
+
+            <label>
+                Product
+            </label>
+
+
+            <select
+                id="productId"
+                required>
+
+                <option value="">
+                    Select Product
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Adjustment Type
+            </label>
+
+
+            <select
+                id="adjustmentType"
+                required>
+
+                <option value="">
+                    Select Type
+                </option>
+
+                <option value="IN">
+                    Stock IN
+                </option>
+
+                <option value="OUT">
+                    Stock OUT
+                </option>
+
+                <option value="ADJUSTMENT">
+                    Set Exact Stock
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Quantity
+            </label>
+
+
+            <input
+                type="number"
+                id="quantity"
+                min="0"
+                step="0.01"
+                required>
+
+
+
+            <label>
+                Remarks
+            </label>
+
+
+            <textarea
+                id="remarks"
+                rows="3"
+                placeholder="Optional remarks">
+            </textarea>
+
+
+
+            <button
+                type="submit">
+
+                Update Stock
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script
+    src="../js/inventory.js">
+</script>
+
+
+</body>
+
+</html>
+>>>>>>> a473e3435407118240ea630d7a70313ef8388e7c

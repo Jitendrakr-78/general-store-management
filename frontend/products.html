@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Product Management</h1>
+        <p>Manage your store products</p>
+    </header>
+
+    <main class="container">
+
+        <p>
+            <a href="dashboard.html">← Dashboard</a>
+        </p>
+
+        <section class="card">
+
+            <h2 id="formTitle">Add New Product</h2>
+
+            <form id="productForm">
+
+                <input type="hidden" id="productId">
+
+                <div class="form-group">
+                    <label for="name">Product Name *</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+
+                    <label for="category_id">
+                        Category
+                    </label>
+
+                    <select
+                        id="category_id"
+                        name="category_id"
+                    >
+                        <option value="">
+                            Select Category
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="purchase_price">
+                        Purchase Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="purchase_price"
+                        name="purchase_price"
+                        step="0.01"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="selling_price">
+                        Selling Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="selling_price"
+                        name="selling_price"
+                        step="0.01"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="stock_quantity">
+                        Stock Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="stock_quantity"
+                        name="stock_quantity"
+                        step="0.01"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="minimum_stock">
+                        Minimum Stock
+                    </label>
+
+                    <input
+                        type="number"
+                        id="minimum_stock"
+                        name="minimum_stock"
+                        step="0.01"
+                        min="0"
+                        value="5"
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                >
+                    Save Product
+                </button>
+
+                <button
+                    type="reset"
+                    onclick="resetForm()"
+                >
+                    Clear
+                </button>
+
+            </form>
+
+            <p id="productMessage"></p>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Product List</h2>
+
+            <p>All products available in store</p>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search product..."
+            >
+
+            <br><br>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Purchase</th>
+                        <th>Selling</th>
+                        <th>Stock</th>
+                        <th>Minimum Stock</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="productTableBody">
+
+                    <tr>
+
+                        <td colspan="8">
+                            Loading products...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/products.js"></script>
+
+</body>
+
+</html>
